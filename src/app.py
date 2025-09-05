@@ -20,8 +20,23 @@ app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
           "static")), name="static")
 
 # In-memory activity database
-# Add more activities: sports, artistic, intellectual
 activities = {
+    """
+    Dictionary representing extracurricular activities offered at Mergington High School.
+
+    Structure:
+        {
+            activity_name (str): {
+                "description" (str): Brief description of the activity,
+                "schedule" (str): When the activity takes place,
+                "max_participants" (int): Maximum number of students allowed,
+                "participants" (list of str): List of student email addresses signed up
+            },
+            ...
+        }
+
+    Add more activities as needed, including sports, artistic, and intellectual options.
+    """
     "Soccer Team": {
         "description": "Join the school soccer team and compete in local leagues",
         "schedule": "Wednesdays, 4:00 PM - 6:00 PM",
